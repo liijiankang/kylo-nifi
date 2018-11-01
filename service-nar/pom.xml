@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hypers</groupId>
+		<artifactId>TestControllerService</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>service-nar</artifactId>
+	<packaging>nar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.nifi</groupId>
+			<artifactId>nifi-dbcp-service-nar</artifactId>
+			<version>${nifi.version}</version>
+			<type>nar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hypers</groupId>
+			<artifactId>service-imp</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.nifi</groupId>
+				<artifactId>nifi-nar-maven-plugin</artifactId>
+				<version>1.1.0</version>
+				<extensions>true</extensions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
